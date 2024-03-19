@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Detail</title>
+</head>
+<body>
+    <h1>Todo Detail</h1>
+    <div>
+        <h2>Title: <%= todo.title %></h2>
+        <p>       
+            <a href="/toggle-todo-detail/<%= todo.id %>">
+                Změnit stav
+            </a>
+            Status: <%= todo.done ? 'Done' : 'Not Done' %>
+        </p>
+        <p>
+            <a href="/remove-todo/<%= todo.id %>">
+                remove
+            </a>
+        </p>
+        <h1>Todo Detail</h1>
+<div>
+    <form action="/todo/<%= todo.id %>/update-title" method="POST">
+        <label for="newTitle">New Title:</label>
+        <input type="text" id="newTitle" name="newTitle" required>
+        <button type="submit">Update Title</button>
+    </form>
+</div>
+    </div>
+</body>
+</html>
